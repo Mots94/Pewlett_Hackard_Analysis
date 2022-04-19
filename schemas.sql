@@ -36,8 +36,8 @@ CREATE TABLE salaries (
 );
 
 CREATE TABLE dept_emp (
+    emp_no INT NOT NULL,
 	dept_no VARCHAR NOT NULL,
-	emp_no INT NOT NULL,
 	from_date DATE NOT NULL,
 	to_date DATE NOT NULL,
 FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
@@ -51,7 +51,11 @@ CREATE TABLE titles (
 	from_date DATE NOT NULL,
 	to_date DATE NOT NULL,
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-	PRIMARY KEY (emp_no)
 );
 
 SELECT * FROM departments;
+SELECT * FROM dept_manager;
+SELECT * FROM employees;
+SELECT * FROM dept_emp;
+SELECT * FROM salaries;
+SELECT * FROM titles;
