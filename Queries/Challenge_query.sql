@@ -27,3 +27,21 @@ INTO retiring_titles
 FROM unique_retirement ur
 GROUP BY (ur.title)
 ORDER BY COUNT(ur.title) DESC;
+
+SELECT DISTINCT ON (e.emp_no)
+	e.emp_no,
+	e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	ti.title
+INTO mentors
+FROM employees e
+	JOIN dept_emp de
+		ON (e.emp_no = de.emp_no)
+	JOIN titles ti
+		ON (e.emp_no = ti.emp_no)
+WHERE de.to_date = '9999-01-01'
+	AND e.birth_date BETWEEN '1965-01-01' AND '1965-12-31'
+ORDER BY e.emp_no, ti.title;
