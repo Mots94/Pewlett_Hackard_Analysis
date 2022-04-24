@@ -6,7 +6,9 @@ Pewlett Hackard is a company that is expecting a large portion of their workforc
 ## Results
 * There is a total of 72,458 employees that are currently eligible for retirement
 * Of those eligible for retirement, the top three position titles that will have openings will be 'Senior Engineer', 'Senior Staff', and 'Engineer'.  
+
 ![retirement_titles](https://github.com/Mots94/Pewlett_Hackard_Analysis/blob/main/Data/retirement_titles.PNG)
+
 * Similar to the table above, the top three positions for employees eligible to participate in the part-time mentor program are Senior Staff, Engineers, and Senior Engineers
 
 ![mentor_titles](https://github.com/Mots94/Pewlett_Hackard_Analysis/blob/main/Data/mentor_titles.PNG)
