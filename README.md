@@ -14,6 +14,7 @@ Pewlett Hackard is a company that is expecting a large portion of their workforc
 
 <details><summary>CODE USED FOR TABLE</summary>
 <p>
+
 ```
 SELECT me.title, COUNT(me.title) 
 INTO mentor_titles
@@ -21,6 +22,7 @@ FROM mentors me
 GROUP BY (me.title)
 ORDER BY COUNT(me.title) DESC;
 ```
+
 <p>
 </details>
 
