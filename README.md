@@ -45,7 +45,7 @@ Pewlett Hackard is a company that is expecting a large portion of their workforc
     </details>
 
 ## Summary
-As seen above, there are 72,458 roles that will need to be filled at Pewlett Hackard, but there are only 1,549 current employees that are eligible for the mentorship program.  Overall, that is about 47 new employees for each eligible mentor.  It is certainly not realistic to expect that these mentors could handle such a work load.  It is also not realistic to expect that all of the 1,549 eligible employees for mentoring will want to take on the mentor role.  Perhaps it would be worthwhile to expand the eligibility criteria for mentoring, since we originally only looked at current employees born in 1965.  In 2022, those individuals would be about 57, which is still about 5-7 years away from retirement based on the national average for men and women.  The query criteria can also be expanded to younger individuals that are not quite ready to retire, but who are getting closer and may be interested in taking on training.  Therefore, we can expand our criteria to current employees born between 1962 and 1970. The following query was re-factored from the original mentory eligibility query to expand the search criteria:
+As seen above, there are 72,458 roles that will need to be filled at Pewlett Hackard, but there are only 1,549 current employees that are eligible for the mentorship program.  Overall, that is about 47 open positions for each eligible mentor.  It is certainly not realistic to expect that these mentors could handle such a work load.  It is also not realistic to expect that all of the s1,549 eligible employees for mentoring will want to take on the mentor role.  Perhaps it would be worthwhile to expand the eligibility criteria for mentoring, since we originally only looked at current employees born in 1965.  In 2022, those individuals would be about 57, which is still about 5-7 years away from retirement based on the national average for men and women.  The query criteria can also be expanded to younger individuals that are not quite ready to retire, but who are getting closer and may be interested in taking on training.  Therefore, we can expand our criteria to current employees born between 1962 and 1970. The following query was re-factored from the original mentory eligibility query to expand the search criteria:
 
 <details><summary>QUERY</summary>
 <p>
@@ -73,6 +73,21 @@ ORDER BY e.emp_no, ti.title;
 <p>
 </details>
 
-The following output shows that there would be many more mentors in this range of years:
+The following output shows that there would be many more mentors in this range of years.  There would be a total of 56,859 eligible mentors, meaning there would be about 1.2 open positions for every eligible mentor.
 
 ![mentors_expanded](https://github.com/Mots94/Pewlett_Hackard_Analysis/blob/main/Data/mentor_titles_expanded.PNG)
+
+<details><summary>QUERY</summary>
+<p>
+
+```
+SELECT me_ex.title, COUNT(me_ex.title) 
+INTO mentor_titles_ex
+FROM mentors_expanded me_ex
+GROUP BY (me_ex.title)
+ORDER BY COUNT(me_ex.title) DESC;
+```
+
+<p>
+</details>
+
