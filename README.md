@@ -73,7 +73,7 @@ ORDER BY e.emp_no, ti.title;
 <p>
 </details>
 
-The following output shows that there would be many more mentors in this range of years.  There would be a total of 56,859 eligible mentors, meaning there would be about 1.2 open positions for every eligible mentor.
+The following output shows that there would be many more mentors in this range of years.  There would be a total of 56,859 eligible mentors, meaning there would be about 1.2 open positions for every eligible mentor.  It may be worthwhile for the company to look at recruiting their mentors from a wider range of current employees.  This would give employees being promoted the best chance to learn their new roles thoroughly and have confidence.
 
 ![mentors_expanded](https://github.com/Mots94/Pewlett_Hackard_Analysis/blob/main/Data/mentor_titles_expanded.PNG)
 
