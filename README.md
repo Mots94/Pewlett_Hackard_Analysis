@@ -11,38 +11,38 @@ Pewlett Hackard is a company that is expecting a large portion of their workforc
 
 * Similar to the table above, the top three positions for employees eligible to participate in the part-time mentor program are Senior Staff, Engineers, and Senior Engineers
 
-![mentor_titles](https://github.com/Mots94/Pewlett_Hackard_Analysis/blob/main/Data/mentor_titles.PNG)
+    ![mentor_titles](https://github.com/Mots94/Pewlett_Hackard_Analysis/blob/main/Data/mentor_titles.PNG)
 
 
-<details><summary>CODE USED FOR TABLE</summary>
-<p>
+    <details><summary>CODE USED FOR TABLE</summary>
+    <p>
 
-```
-SELECT me.title, COUNT(me.title) 
-INTO mentor_titles
-FROM mentors me
-GROUP BY (me.title)
-ORDER BY COUNT(me.title) DESC;
-```
+    ```
+    SELECT me.title, COUNT(me.title) 
+    INTO mentor_titles
+    FROM mentors me
+    GROUP BY (me.title)
+    ORDER BY COUNT(me.title) DESC;
+    ```
 
-<p>
-</details>
+    <p>
+    </details>
 
 * There are only 1,549 eligible mentors available for the 72,458 positions that will need to be filled in the near future
 
-![mentor_titles_sum](https://github.com/Mots94/Pewlett_Hackard_Analysis/blob/main/Data/mentor_titles_sum.PNG)
+    ![mentor_titles_sum](https://github.com/Mots94/Pewlett_Hackard_Analysis/blob/main/Data/mentor_titles_sum.PNG)
 
 
-<details><summary>CODE USED FOR TABLE</summary>
-<p>
+    <details><summary>CODE USED FOR TABLE</summary>
+    <p>
 
-```
-SELECT SUM(count)
-FROM mentor_titles;
-```
+    ```
+    SELECT SUM(count)
+    FROM mentor_titles;
+    ```
 
-<p>
-</details>
+    <p>
+    </details>
 
 ## Summary
 As seen above, there are 72,458 roles that will need to be filled at Pewlett Hackard, but there are only 1,549 current employees that are eligible for the mentorship program.  Overall, that is about 47 new employees for each eligible mentor.  It is certainly not realistic to expect that these mentors could handle such a work load.  It is also not realistic to expect that all of the 1,549 eligible employees for mentoring will want to take on the mentor role.  Perhaps it would be worthwhile to expand the eligibility criteria for mentoring, since we originally only looked at current employees born in 1965.  In 2022, those individuals would be about 57, which is still about 5-7 years away from retirement based on the national average for men and women.  The query criteria can also be expanded to younger individuals that are not quite ready to retire, but who are getting closer and may be interested in taking on training.  Therefore, we can expand our criteria to current employees born between 1962 and 1970. The following query was re-factored from the original mentory eligibility query to expand the search criteria:
